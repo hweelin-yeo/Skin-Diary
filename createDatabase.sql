@@ -1,0 +1,9 @@
+DROP DATABASE IF EXISTS psDatabase;
+CREATE DATABASE psDatabase CHARACTER SET 'utf8';
+USE psDatabase;
+
+CREATE TABLE userLogs(
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `username` VARCHAR(200),
+    `timeStamp` DATETIME
+);
