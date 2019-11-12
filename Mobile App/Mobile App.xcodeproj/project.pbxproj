@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA5DC9AC2374BEDD0075C14A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC9AB2374BEDD0075C14A /* NetworkManager.swift */; };
+		BA7D124123793C74009AB2CA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D124023793C74009AB2CA /* UIColor+Extension.swift */; };
 		BAD9A1662363892300A225E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9A1652363892300A225E1 /* AppDelegate.swift */; };
 		BAD9A1682363892300A225E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9A1672363892300A225E1 /* HomeViewController.swift */; };
 		BAD9A16D2363892500A225E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD9A16C2363892500A225E1 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		39000860B28D99E6F8A4377F /* Pods-Mobile App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mobile App/Pods-Mobile App.debug.xcconfig"; sourceTree = "<group>"; };
 		5F4E67EC140C8BEFB649E05A /* Pods_Mobile_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5DC9AB2374BEDD0075C14A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BA7D124023793C74009AB2CA /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BAD9A1622363892300A225E1 /* Mobile App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD9A1652363892300A225E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD9A1672363892300A225E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BA7D124223793C8A009AB2CA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BA7D124023793C74009AB2CA /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		BAD9A1592363892300A225E1 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 				BAD9A1772363894500A225E1 /* Networking */,
 				BAD9A1652363892300A225E1 /* AppDelegate.swift */,
 				BAD9A1672363892300A225E1 /* HomeViewController.swift */,
+				BA7D124223793C8A009AB2CA /* Extension */,
 				BAD9A16C2363892500A225E1 /* Assets.xcassets */,
 				BAD9A16E2363892500A225E1 /* LaunchScreen.storyboard */,
 				BAD9A1712363892500A225E1 /* Info.plist */,
@@ -234,6 +245,7 @@
 				BAD9A17B23638A1900A225E1 /* ParameterEncoder.swift in Sources */,
 				BAD9A1662363892300A225E1 /* AppDelegate.swift in Sources */,
 				BAD9A17F23638B4100A225E1 /* Service.swift in Sources */,
+				BA7D124123793C74009AB2CA /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
