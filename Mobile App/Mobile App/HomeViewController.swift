@@ -9,6 +9,15 @@
 import UIKit
 import SnapKit
 
+func generateGreetingLabel() -> UILabel {
+    
+    let label = UILabel()
+    label.font = SDFont(type: .bold).instance
+    label.textColor = .white
+    
+    return label
+}
+
 class HomeViewController: UIViewController {
     
     var greetingView: UIView?

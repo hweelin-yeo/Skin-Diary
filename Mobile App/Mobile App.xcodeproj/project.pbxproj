@@ -17,6 +17,7 @@
 		BAD9A17B23638A1900A225E1 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9A17A23638A1900A225E1 /* ParameterEncoder.swift */; };
 		BAD9A17D23638AEC00A225E1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9A17C23638AEC00A225E1 /* Router.swift */; };
 		BAD9A17F23638B4100A225E1 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9A17E23638B4100A225E1 /* Service.swift */; };
+		BAF1FD54237B438100D708DE /* SDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1FD53237B438100D708DE /* SDConstants.swift */; };
 		EBD5219964666AF9FACF542A /* Pods_Mobile_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4E67EC140C8BEFB649E05A /* Pods_Mobile_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		BAD9A17A23638A1900A225E1 /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
 		BAD9A17C23638AEC00A225E1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		BAD9A17E23638B4100A225E1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		BAF1FD53237B438100D708DE /* SDConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDConstants.swift; sourceTree = "<group>"; };
 		ECDBC49DA1174F6C5B44574B /* Pods-Mobile App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mobile App/Pods-Mobile App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +59,14 @@
 				ECDBC49DA1174F6C5B44574B /* Pods-Mobile App.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA452D99237B41AD00FAA405 /* UI Constants */ = {
+			isa = PBXGroup;
+			children = (
+				BAF1FD53237B438100D708DE /* SDConstants.swift */,
+			);
+			path = "UI Constants";
 			sourceTree = "<group>";
 		};
 		BA7D124223793C8A009AB2CA /* Extension */ = {
@@ -91,6 +101,7 @@
 				BAD9A1772363894500A225E1 /* Networking */,
 				BAD9A1652363892300A225E1 /* AppDelegate.swift */,
 				BAD9A1672363892300A225E1 /* HomeViewController.swift */,
+				BA452D99237B41AD00FAA405 /* UI Constants */,
 				BA7D124223793C8A009AB2CA /* Extension */,
 				BAD9A16C2363892500A225E1 /* Assets.xcassets */,
 				BAD9A16E2363892500A225E1 /* LaunchScreen.storyboard */,
@@ -240,6 +251,7 @@
 			files = (
 				BAD9A1792363897A00A225E1 /* HTTP.swift in Sources */,
 				BAD9A1682363892300A225E1 /* HomeViewController.swift in Sources */,
+				BAF1FD54237B438100D708DE /* SDConstants.swift in Sources */,
 				BAD9A17D23638AEC00A225E1 /* Router.swift in Sources */,
 				BA5DC9AC2374BEDD0075C14A /* NetworkManager.swift in Sources */,
 				BAD9A17B23638A1900A225E1 /* ParameterEncoder.swift in Sources */,
