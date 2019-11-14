@@ -9,50 +9,53 @@
 import UIKit
 import SnapKit
 
-func generateGreetingLabel() -> UILabel {
-    
-    let label = UILabel()
-    label.font = SDFont(type: .bold).instance
-    label.textColor = .white
-    
-    return label
-}
-
 class HomeViewController: UIViewController {
     
-    var greetingView: UIView?
+    var greetingView = UIView()
+    var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+        tableView.sectionHeaderHeight = 45
+        tableView.tableFooterView = UIView()
+        
         setupGreetings(name: "Kaitlyn")
+        setupTableView()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func setupGreetings(name: String) {
-        greetingView = UIView()
-        
-        guard let superview = self.view, let greetingView = greetingView else {
-            return
+    // MARK: - Table View
+    func setupTableView() {
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.snp.makeConstraints { (make) in
+            make.top.equalTo(greetingView.snp.bottom)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
+    }
+    
+    // MARK: UI
+    func setupGreetings(name: String) {
         
-        superview.addSubview(greetingView)
-        greetingView.backgroundColor = UIColor(hexString: "#54d289")
+        view.addSubview(greetingView)
+        greetingView.backgroundColor = SDColor.turquoise
         
         greetingView.snp.makeConstraints { (make) in
-            make.width.equalTo(superview)
-            make.height.equalTo(superview).multipliedBy(0.3)
-            make.top.equalTo(superview)
+            make.width.equalToSuperview()
+            make.height.equalTo(view).multipliedBy(0.3)
+            make.top.equalToSuperview()
         }
         
-        let nameLabel1 = UILabel()
-        let nameLabel2 = UILabel()
+        let nameLabel1 = generateGreetingLabel()
+        let nameLabel2 = generateGreetingLabel()
         nameLabel1.text = "Good Morning,"
         nameLabel2.text = "\(name)"
-        nameLabel1.font = UIFont(name:"HelveticaNeue-Bold", size: 30.0)
-        nameLabel2.font = UIFont(name:"HelveticaNeue-Bold", size: 30.0)
-        nameLabel1.textColor = .white
-        nameLabel2.textColor = .white
         
         greetingView.addSubview(nameLabel1)
         greetingView.addSubview(nameLabel2)
@@ -71,7 +74,6 @@ class HomeViewController: UIViewController {
             make.height.equalTo(greetingView).multipliedBy(0.25)
         }
         
-        
         let reminderLabel = UILabel()
         reminderLabel.text = "Remember to put on your sunscreen!"
         reminderLabel.font = UIFont(name:"HelveticaNeue-Medium", size: 15.0)
@@ -89,9 +91,6 @@ class HomeViewController: UIViewController {
     }
     
     func setupWeatherStack() {
-        guard let greetingView = greetingView else {
-            return
-        }
 
         let weatherStackView = UIView() // UIStackView()
 
@@ -104,12 +103,6 @@ class HomeViewController: UIViewController {
         locationDescr.text = "Roosevelt Island, NY"
         locationDescr.font = UIFont(name:"HelveticaNeue-Medium", size: 12.0)
         locationDescr.textColor = .white
-        
-//        weatherStackView.axis  = .vertical
-//        weatherStackView.spacing = 5
-        
-//        weatherStackView.addArrangedSubview(weatherDescr)
-//        weatherStackView.addArrangedSubview(locationDescr)
 
         weatherStackView.addSubview(weatherDescr)
         weatherStackView.addSubview(locationDescr)
@@ -137,7 +130,191 @@ class HomeViewController: UIViewController {
             make.bottom.equalTo(greetingView).offset(-10)
         }
     }
+    
+    func generateGreetingLabel() -> UILabel {
+        
+        let label = UILabel()
+        label.font = SDFont(type: .bold, size: .large).instance
+        label.textColor = .white
+        
+        return label
+    }
 
 
 }
 
+// MARK: - UITableViewDelegate
+extension HomeViewController: UITableViewDelegate {
+    
+}
+
+// MARK: - UITableViewDataSource
+// just for demo purposes sorry!!!
+extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        return generateHeaderView()
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        return generateTableViewCells()[indexPath.row]
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75.0
+    }
+}
+
+// MARK: - UI (HeaderView)
+extension HomeViewController {
+    
+    func generateHeaderView() -> UIView {
+        let labels = generateLabelsArray(["Selfies", "Weather", "Feeling", "Sleep", "Water", "Products Used"])
+        
+        let headerView = UIView()
+        headerView.backgroundColor = SDColor.lightGray
+        
+        let labelWidth = 47.0
+        let labelHeight = 28.0
+        let labelGap = 10.0
+        
+        for (index, label) in labels.enumerated() {
+            headerView.addSubview(label)
+            
+            if (index == 0) {
+                label.snp.makeConstraints { (make) in
+                    make.left.equalToSuperview().offset(70)
+                    make.centerY.equalToSuperview()
+                    make.height.equalTo(labelHeight)
+                    make.width.equalTo(labelWidth)
+                    
+                }
+            } else {
+                label.snp.makeConstraints { (make) in
+                    make.left.equalTo(labels[index-1].snp.right).offset(labelGap)
+                    make.centerY.equalToSuperview()
+                    make.height.equalTo(labelHeight)
+                    make.width.equalTo(labelWidth)
+                }
+            }
+            
+            
+        }
+        
+        return headerView
+    }
+    
+    func generateLabelsArray(_ names: [String]) -> [UILabel] {
+        var res: [UILabel] = []
+        for name in names {
+            let label = UILabel()
+            label.text = name
+            label.font = SDFont(type: .medium, size: .mediumSmall).instance
+            label.textColor = .darkGray
+            label.lineBreakMode = .byWordWrapping
+            label.numberOfLines = 2;
+            res.append(label)
+        }
+        
+        return res
+    }
+}
+
+// MARK: - UI (HeaderView)
+extension HomeViewController {
+    func generateTableViewCells() -> [UITableViewCell]{
+        var res: [UITableViewCell] = []
+        
+        
+        let cell1 = generateCell("Nov \n11", [UIImage(named: "sunPink")!,
+                                              UIImage(named: "excited")!,
+                                              UIImage(named: "56Hours")!,
+                                              UIImage(named: "78Cups")!,
+                                              UIImage(named: "70ProductUsed")!])
+        
+        let cell2 = generateCell("Nov \n9", [UIImage(named: "sunPink")!,
+                                              UIImage(named: "excited")!,
+                                              UIImage(named: "56Hours")!,
+                                              UIImage(named: "78Cups")!,
+                                              UIImage(named: "70ProductUsed")!])
+        
+        let cell3 = generateCell("Nov \n8", [UIImage(named: "cloud")!,
+                                              UIImage(named: "meh")!,
+                                              UIImage(named: "78Hours")!,
+                                              UIImage(named: "56Cups")!,
+                                              UIImage(named: "allProductUsed")!])
+        res.append(cell1)
+        res.append(cell2)
+        res.append(cell3)
+        
+        return res
+        
+        
+    }
+    
+    func generateCell(_ date: String, _ pics: [UIImage]) -> UITableViewCell {
+        
+        let dateLabelWidth = 37.0
+        let dateLabelHeight = 47.0
+        let dateLabelGap = 15.0
+        
+        let imageWidth = 35.0
+        let imageHeight = 35.0
+        let imageGap = 20.0
+        
+        let cell = UITableViewCell()
+        
+        let dateLabel = UILabel()
+        dateLabel.text = date
+        dateLabel.font = UIFont(name: "Avenir-Heavy", size: 12.0)
+        dateLabel.textColor = .darkGray
+        dateLabel.lineBreakMode = .byWordWrapping
+        dateLabel.numberOfLines = 2;
+        
+        cell.contentView.addSubview(dateLabel)
+        
+        dateLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(dateLabelGap)
+            make.centerY.equalToSuperview()
+            make.height.equalTo(dateLabelHeight)
+            make.width.equalTo(dateLabelWidth)
+            
+        }
+        
+        let imageViewArray = pics.map { UIImageView(image: $0)}
+        
+        for (index, imageView) in imageViewArray.enumerated() {
+            cell.contentView.addSubview(imageView)
+            
+            if (index == 0) {
+                imageView.snp.makeConstraints { (make) in
+                    make.left.equalToSuperview().offset(130)
+                    make.centerY.equalToSuperview()
+                    make.height.equalTo(imageHeight)
+                    make.width.equalTo(imageWidth)
+                    
+                }
+            } else {
+                imageView.snp.makeConstraints { (make) in
+                    make.left.equalTo(imageViewArray[index-1].snp.right).offset(imageGap)
+                    make.centerY.equalToSuperview()
+                    make.height.equalTo(imageHeight)
+                    make.width.equalTo(imageWidth)
+                }
+            }
+            
+            
+        }
+        
+        
+        
+        return cell
+        
+    }
+    
+}
