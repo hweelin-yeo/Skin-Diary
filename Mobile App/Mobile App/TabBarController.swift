@@ -24,16 +24,20 @@ class TabBarController: UITabBarController {
     
     func loadTabBarItems() {
         let homeItem = UITabBarItem()
-        homeItem.image = UIImage(named: "home")
+        homeItem.title = "Home"
+        homeItem.image = UIImage(named: "homeIcon")
         
         let statsItem = UITabBarItem()
-        statsItem.image = UIImage(named: "statistic")
+        statsItem.title = "Stats"
+        statsItem.image = UIImage(named: "statIcon")
         
         let productItem = UITabBarItem()
-        productItem.image = UIImage(named: "products")
+        productItem.title = "Products"
+        productItem.image = UIImage(named: "productUsedIcon")
         
         let profileItem = UITabBarItem()
-        profileItem.image = UIImage(named: "profile")
+        profileItem.title = "Profile"
+        profileItem.image = UIImage(named: "profileIcon")
         
         let dailyEntryItem = UITabBarItem()
         dailyEntryItem.image = UIImage(named: "addData")
