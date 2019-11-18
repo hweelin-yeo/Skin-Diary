@@ -14,7 +14,7 @@ class TabBarController: UITabBarController {
     public let statsVC = UIViewController()
     public let productVC = UIViewController()
     public let profileVC = UIViewController()
-    public let dailyEntryVC = UIViewController()
+    public let dailyEntryVC = DailyEntryViewController()
     
     override func viewDidLoad() {
         view.backgroundColor = .white
