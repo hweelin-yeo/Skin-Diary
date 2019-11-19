@@ -6,8 +6,7 @@ CREATE TABLE customerPurchaseHistory(
     `zipcode` VARCHAR(7),
     `location` VARCHAR(200),	
     `productId` INT UNSIGNED,
-    `productName` VARCHAR(200),
-    `category` VARCHAR(200)
+    `productName` VARCHAR(200)
 );
 
 CREATE TABLE customer(
@@ -35,7 +34,7 @@ CREATE TABLE bestSellersConcerns(
 
 CREATE TABLE bestSellerSkintypes(
     `productId` INT UNSIGNED NOT NULL,
-    `skinTypeID` INT UNSIGNED NOT NULL,
+    `skinTypeId` INT UNSIGNED NOT NULL,
     CONSTRAINT productId_concernId PRIMARY KEY(`productId`, `skinTypeID`)
 );
 
@@ -46,7 +45,7 @@ CREATE TABLE concerns(
 );
 
 CREATE TABLE skinTypes(
-    `skinTypeID` INT UNSIGNED NOT NULL,
+    `skinTypeId` INT UNSIGNED NOT NULL,
     `skinType` VARCHAR(200) NOT NULL,
     CONSTRAINT productId_concernId PRIMARY KEY(`skinTypeID`, `skinType`)
 );
