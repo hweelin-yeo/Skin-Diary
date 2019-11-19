@@ -19,15 +19,29 @@ def create_customerPurchaseHistory(fileName):
         customerId = str(row["customerId"])
         zipcode = str(row["zipcode"])
         location = str(row["location"])
-        productId = str(row["productId"])
-        productName = str(row["productName"])
         
-        x = cur.execute("INSERT into customerPurchaseHistory(purchaseOrder, customerId, zipcode, location, productId, productName) VALUES (%s, %s, %s, %s, %s, %s)", (purchaseOrder, customerId, zipcode, location, productId, productName))
+        x = cur.execute("INSERT into customerPurchaseHistory(purchaseOrder, customerId, zipcode, location) VALUES (%s, %s, %s, %s)", (purchaseOrder, customerId, zipcode, location))
         conn.commit()     
         
     cur.close()
     conn.close()
     
+def create_purchaseProduct(fileName):   
+    
+    purchaseProduct_data = pd.read_csv(fileName)
+    cur, conn = connection()
+    
+    for idx in range(len(purchaseProduct_data)):
+        row = purchaseProduct_data.loc[idx]
+        purchaseOrder = str(row["purchaseOrder"])
+        productId = str(row["productId"])
+        productName = str(row["productName"])
+        
+        x = cur.execute("INSERT into customerPurchaseHistory(purchaseOrder, productId, productName) VALUES (%s, %s %s)", (purchaseOrder, productId, productName))
+        conn.commit()     
+        
+    cur.close()
+    conn.close()    
     
 def create_customer(fileName):   
     

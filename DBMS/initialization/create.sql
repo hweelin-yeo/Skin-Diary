@@ -4,9 +4,14 @@ CREATE TABLE customerPurchaseHistory(
     `purchaseOrder` INT UNSIGNED PRIMARY KEY,
     `customerId` VARCHAR(200),
     `zipcode` VARCHAR(7),
-    `location` VARCHAR(200),	
-    `productId` INT UNSIGNED,
-    `productName` VARCHAR(200)
+    `location` VARCHAR(200)
+);
+
+CREATE TABLE purchaseProducts(
+	`purchaseOrder` INT UNSIGNED NOT NULL,
+	`productId` INT UNSIGNED NOT NULL,
+    `productName` VARCHAR(200),
+    CONSTRAINT purchaseId_productId PRIMARY KEY(`purchaseOrder`, `productId`)
 );
 
 CREATE TABLE customer(
