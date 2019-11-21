@@ -4,7 +4,8 @@ CREATE TABLE customerPurchaseHistory(
     `purchaseOrder` INT UNSIGNED PRIMARY KEY,
     `customerId` VARCHAR(200),
     `zipcode` VARCHAR(7),
-    `location` VARCHAR(200)
+    `location` VARCHAR(200),
+    `orderDate` DATETIME
 );
 
 CREATE TABLE purchaseProducts(
