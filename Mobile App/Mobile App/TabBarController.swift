@@ -41,6 +41,8 @@ class TabBarController: UITabBarController {
         
         let dailyEntryItem = UITabBarItem()
         dailyEntryItem.image = UIImage(named: "addData")
+            
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for:.selected)
         
         homeVC.tabBarItem = homeItem
         statsVC.tabBarItem = statsItem
