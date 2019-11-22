@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35FD8B7D848E4797FEA52D08 /* Pods_dayly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED11046BD277A4E42A77C4A2 /* Pods_dayly.framework */; };
 		BA5DC9AC2374BEDD0075C14A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC9AB2374BEDD0075C14A /* NetworkManager.swift */; };
 		BA6C1AD223874FD900478B6E /* DailyEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C1AD123874FD900478B6E /* DailyEntryTableViewCell.swift */; };
 		BA6C1AD42387C54D00478B6E /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C1AD32387C54D00478B6E /* ProductsViewController.swift */; };
@@ -23,12 +24,13 @@
 		BAD9A17D23638AEC00A225E1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9A17C23638AEC00A225E1 /* Router.swift */; };
 		BAD9A17F23638B4100A225E1 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9A17E23638B4100A225E1 /* Service.swift */; };
 		BAF1FD54237B438100D708DE /* SDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1FD53237B438100D708DE /* SDConstants.swift */; };
-		EBD5219964666AF9FACF542A /* Pods_Mobile_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4E67EC140C8BEFB649E05A /* Pods_Mobile_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2244968CD246A525DDB46EB6 /* Pods-dayly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayly.release.xcconfig"; path = "Pods/Target Support Files/Pods-dayly/Pods-dayly.release.xcconfig"; sourceTree = "<group>"; };
 		39000860B28D99E6F8A4377F /* Pods-Mobile App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mobile App/Pods-Mobile App.debug.xcconfig"; sourceTree = "<group>"; };
 		5F4E67EC140C8BEFB649E05A /* Pods_Mobile_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C0C11A0130D83C6C546867 /* Pods-dayly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dayly/Pods-dayly.debug.xcconfig"; sourceTree = "<group>"; };
 		BA5DC9AB2374BEDD0075C14A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BA6C1AD123874FD900478B6E /* DailyEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyEntryTableViewCell.swift; sourceTree = "<group>"; };
 		BA6C1AD32387C54D00478B6E /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
@@ -36,7 +38,7 @@
 		BA7D124023793C74009AB2CA /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BAA51D3923822D1400BC582B /* DailyEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyEntryViewController.swift; sourceTree = "<group>"; };
 		BAC9CE4C237E866400218083 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		BAD9A1622363892300A225E1 /* Mobile App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAD9A1622363892300A225E1 /* dayly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dayly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD9A1652363892300A225E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD9A1672363892300A225E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BAD9A16C2363892500A225E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		BAD9A17E23638B4100A225E1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		BAF1FD53237B438100D708DE /* SDConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDConstants.swift; sourceTree = "<group>"; };
 		ECDBC49DA1174F6C5B44574B /* Pods-Mobile App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mobile App/Pods-Mobile App.release.xcconfig"; sourceTree = "<group>"; };
+		ED11046BD277A4E42A77C4A2 /* Pods_dayly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD5219964666AF9FACF542A /* Pods_Mobile_App.framework in Frameworks */,
+				35FD8B7D848E4797FEA52D08 /* Pods_dayly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +70,8 @@
 			children = (
 				39000860B28D99E6F8A4377F /* Pods-Mobile App.debug.xcconfig */,
 				ECDBC49DA1174F6C5B44574B /* Pods-Mobile App.release.xcconfig */,
+				79C0C11A0130D83C6C546867 /* Pods-dayly.debug.xcconfig */,
+				2244968CD246A525DDB46EB6 /* Pods-dayly.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -91,7 +96,7 @@
 		BAD9A1592363892300A225E1 = {
 			isa = PBXGroup;
 			children = (
-				BAD9A1642363892300A225E1 /* Mobile App */,
+				BAD9A1642363892300A225E1 /* dayly */,
 				BAD9A1632363892300A225E1 /* Products */,
 				10DA4FD1448806C4C47CCEDF /* Pods */,
 				FAD0D5DD99FF1F88D9AEB176 /* Frameworks */,
@@ -101,12 +106,12 @@
 		BAD9A1632363892300A225E1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BAD9A1622363892300A225E1 /* Mobile App.app */,
+				BAD9A1622363892300A225E1 /* dayly.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BAD9A1642363892300A225E1 /* Mobile App */ = {
+		BAD9A1642363892300A225E1 /* dayly */ = {
 			isa = PBXGroup;
 			children = (
 				BAD9A1772363894500A225E1 /* Networking */,
@@ -122,7 +127,7 @@
 				BAD9A16E2363892500A225E1 /* LaunchScreen.storyboard */,
 				BAD9A1712363892500A225E1 /* Info.plist */,
 			);
-			path = "Mobile App";
+			path = dayly;
 			sourceTree = "<group>";
 		};
 		BAD9A1772363894500A225E1 /* Networking */ = {
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				5F4E67EC140C8BEFB649E05A /* Pods_Mobile_App.framework */,
+				ED11046BD277A4E42A77C4A2 /* Pods_dayly.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,9 +154,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BAD9A1612363892300A225E1 /* Mobile App */ = {
+		BAD9A1612363892300A225E1 /* dayly */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BAD9A1742363892500A225E1 /* Build configuration list for PBXNativeTarget "Mobile App" */;
+			buildConfigurationList = BAD9A1742363892500A225E1 /* Build configuration list for PBXNativeTarget "dayly" */;
 			buildPhases = (
 				9E3FD8E27208991288D959BA /* [CP] Check Pods Manifest.lock */,
 				BAD9A15E2363892300A225E1 /* Sources */,
@@ -162,9 +168,9 @@
 			);
 			dependencies = (
 			);
-			name = "Mobile App";
+			name = dayly;
 			productName = "Mobile App";
-			productReference = BAD9A1622363892300A225E1 /* Mobile App.app */;
+			productReference = BAD9A1622363892300A225E1 /* dayly.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BAD9A15D2363892300A225E1 /* Build configuration list for PBXProject "Mobile App" */;
+			buildConfigurationList = BAD9A15D2363892300A225E1 /* Build configuration list for PBXProject "dayly" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -195,7 +201,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BAD9A1612363892300A225E1 /* Mobile App */,
+				BAD9A1612363892300A225E1 /* dayly */,
 			);
 		};
 /* End PBXProject section */
@@ -221,7 +227,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Mobile App/Pods-Mobile App-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-dayly/Pods-dayly-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -232,7 +238,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mobile App/Pods-Mobile App-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-dayly/Pods-dayly-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9E3FD8E27208991288D959BA /* [CP] Check Pods Manifest.lock */ = {
@@ -250,7 +256,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Mobile App-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-dayly-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -413,17 +419,17 @@
 		};
 		BAD9A1752363892500A225E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39000860B28D99E6F8A4377F /* Pods-Mobile App.debug.xcconfig */;
+			baseConfigurationReference = 79C0C11A0130D83C6C546867 /* Pods-dayly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q8VHLMFG35;
-				INFOPLIST_FILE = "Mobile App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/dayly/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hweelin-yeo.Mobile-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "hweelin-yeo.dayly";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -432,17 +438,17 @@
 		};
 		BAD9A1762363892500A225E1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECDBC49DA1174F6C5B44574B /* Pods-Mobile App.release.xcconfig */;
+			baseConfigurationReference = 2244968CD246A525DDB46EB6 /* Pods-dayly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q8VHLMFG35;
-				INFOPLIST_FILE = "Mobile App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/dayly/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hweelin-yeo.Mobile-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "hweelin-yeo.dayly";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,7 +458,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BAD9A15D2363892300A225E1 /* Build configuration list for PBXProject "Mobile App" */ = {
+		BAD9A15D2363892300A225E1 /* Build configuration list for PBXProject "dayly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BAD9A1722363892500A225E1 /* Debug */,
@@ -461,7 +467,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BAD9A1742363892500A225E1 /* Build configuration list for PBXNativeTarget "Mobile App" */ = {
+		BAD9A1742363892500A225E1 /* Build configuration list for PBXNativeTarget "dayly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BAD9A1752363892500A225E1 /* Debug */,
