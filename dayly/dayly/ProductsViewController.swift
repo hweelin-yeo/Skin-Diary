@@ -138,7 +138,7 @@ class ProductsViewController: UIViewController {
         
         let mayNeedLabel = UILabel()
         mayNeedLabel.font = SDFont(type: .medium, size: .mediumLarger).instance
-        mayNeedLabel.textColor = .black
+        mayNeedLabel.textColor = UIColor(hexString: "#082b0d")
         mayNeedLabel.text = "Your skin may also need"
         
         recommendationView.addSubview(mayNeedLabel)
@@ -154,10 +154,11 @@ class ProductsViewController: UIViewController {
         recommendationView.addSubview(imageView)
         
         imageView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(50)
+//            make.left.equalToSuperview().offset(50)
+            make.centerX.equalToSuperview()
             make.top.equalTo(mayNeedLabel.snp.bottom).offset(20)
             make.height.equalTo(70)
-            make.width.equalToSuperview().multipliedBy(0.7)
+            make.width.equalToSuperview().multipliedBy(0.65)
         }
         
     }
@@ -176,17 +177,35 @@ extension ProductsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
         
+        let cell = UITableViewCell()
         let cellImageView = UIImageView()
         cellImageView.image = UIImage(named: imageArr[indexPath.row])
         cell.addSubview(cellImageView)
         
-        cellImageView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(30)
-            make.centerY.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.5)
-            make.width.equalToSuperview().multipliedBy(0.75)
+        cell.selectionStyle = .none
+        
+        if (indexPath.row == 1) {
+            cellImageView.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().offset(25)
+                make.centerY.equalToSuperview()
+                make.height.equalToSuperview().multipliedBy(0.5)
+                make.width.equalToSuperview().multipliedBy(0.75)
+            }
+        } else if (indexPath.row == 2) {
+            cellImageView.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().offset(25)
+                make.centerY.equalToSuperview()
+                make.height.equalToSuperview().multipliedBy(0.60)
+                make.width.equalToSuperview().multipliedBy(0.90)
+            }
+        } else {
+            cellImageView.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().offset(30)
+                make.centerY.equalToSuperview()
+                make.height.equalToSuperview().multipliedBy(0.5)
+                make.width.equalToSuperview().multipliedBy(0.75)
+            }
         }
         
         return cell
