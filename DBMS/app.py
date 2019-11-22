@@ -3,10 +3,8 @@ from userLog import create_user
 from datetime import datetime
 from __init__ import app
 
-@app.route("/")             # at end point /
-def hello():
-    #userId = request.args.get('userId')
-    #timeStamp = request.args.get('timeStamp')
+@app.route("/userCreated")             # at end point /
+def createUser():
     userId = 4
     timeStamp = datetime.now()
     return create_user(userId, timeStamp)

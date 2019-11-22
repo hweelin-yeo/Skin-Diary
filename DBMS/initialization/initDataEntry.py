@@ -4,13 +4,30 @@ Created on Thu Nov 14 21:16:45 2019
 
 @author: Sachi
 """
-
-from dbconnect import connection
+import sys
+sys.path.append('../../')
+from DBMS.dbconnect import connection
 import pandas as pd
+
+def enter_data():
+    create_customerPurchaseHistory("initData/CustomerPurchaseHistory.xlsx")
+    create_purchaseProduct("initData/purchaseProducts.xlsx")
+    create_customer("initData/customer.xlsx")
+    create_bestSellers("initData/BestSellers.xlsx")
+    create_bestSellersConcerns("initData/bestSellersConcerns.xlsx")
+    create_bestSellerSkintypes("initData/bestSellerSkintypes.xlsx")
+    create_concerns("initData/concerns.xlsx")
+    create_skinTypes("initData/skinTypes.xlsx")
+
+def read_file(fileName):
+    xl = pd.ExcelFile(fileName)
+    sheet = xl.sheet_names[0]
+    return xl.parse(sheet)
+    
 
 def create_customerPurchaseHistory(fileName):   
     
-    customerPurchaseHistory_data = pd.read_csv(fileName)
+    customerPurchaseHistory_data = read_file(fileName)
     cur, conn = connection()
     
     for idx in range(len(customerPurchaseHistory_data)):
@@ -19,8 +36,9 @@ def create_customerPurchaseHistory(fileName):
         customerId = str(row["customerId"])
         zipcode = str(row["zipcode"])
         location = str(row["location"])
+        orderDate = str(row["orderDate"])
         
-        x = cur.execute("INSERT into customerPurchaseHistory(purchaseOrder, customerId, zipcode, location) VALUES (%s, %s, %s, %s)", (purchaseOrder, customerId, zipcode, location))
+        x = cur.execute("INSERT into customerPurchaseHistory(purchaseOrder, customerId, zipcode, location, orderDate) VALUES (%s, %s, %s, %s, %s)", (purchaseOrder, customerId, zipcode, location, orderDate))
         conn.commit()     
         
     cur.close()
@@ -28,7 +46,7 @@ def create_customerPurchaseHistory(fileName):
     
 def create_purchaseProduct(fileName):   
     
-    purchaseProduct_data = pd.read_csv(fileName)
+    purchaseProduct_data = read_file(fileName)
     cur, conn = connection()
     
     for idx in range(len(purchaseProduct_data)):
@@ -37,7 +55,7 @@ def create_purchaseProduct(fileName):
         productId = str(row["productId"])
         productName = str(row["productName"])
         
-        x = cur.execute("INSERT into customerPurchaseHistory(purchaseOrder, productId, productName) VALUES (%s, %s %s)", (purchaseOrder, productId, productName))
+        x = cur.execute("INSERT into purchaseProducts(purchaseOrder, productId, productName) VALUES (%s, %s, %s)", (purchaseOrder, productId, productName))
         conn.commit()     
         
     cur.close()
@@ -45,14 +63,14 @@ def create_purchaseProduct(fileName):
     
 def create_customer(fileName):   
     
-    customer_data = pd.read_csv(fileName)
+    customer_data = read_file(fileName)
     cur, conn = connection()
     
     for idx in range(len(customer_data)):
         row = customer_data.loc[idx]
         customerId = str(row["customerId"])
-        Age = str(row["Age"])
-        Gender = str(row["Gender"])
+        Age = str(row["age"])
+        Gender = str(row["gender"])
         joinDate = str(row["joinDate"])
         skinCondition = str(row["skinCondition"])
         
@@ -65,7 +83,7 @@ def create_customer(fileName):
     
 def create_bestSellers(fileName):
     
-    bestSellers_data = pd.read_csv(fileName)
+    bestSellers_data = read_file(fileName)
     cur, conn = connection()
     
     for idx in range(len(bestSellers_data)):
@@ -76,8 +94,7 @@ def create_bestSellers(fileName):
         function = str(row["function"])
         keywords = str(row["keywords"])
         keyIngredients = str(row["keyIngredients"])
-        
-        x = cur.execute("INSERT into bestSellers(productId, name, description, function, keywords, keyIngredients) VALUES (%s, %s, %s, %s, %s, %s)", (productId, name, description, function, keywords, keyIngredients))
+        x = cur.execute("INSERT into bestSellers(productId, name, description, productFunction, keywords, keyIngredients) VALUES (%s, %s, %s, %s, %s, %s)", (productId, name, description, function, keywords, keyIngredients))
         conn.commit()     
         
     cur.close()
@@ -86,7 +103,7 @@ def create_bestSellers(fileName):
     
 def create_bestSellersConcerns(fileName):
     
-    bestSellersConcerns_data = pd.read_csv(fileName)
+    bestSellersConcerns_data = read_file(fileName)
     cur, conn = connection()
     
     for idx in range(len(bestSellersConcerns_data)):
@@ -103,7 +120,7 @@ def create_bestSellersConcerns(fileName):
 
 def create_bestSellerSkintypes(fileName):
     
-    bestSellerSkintypes_data = pd.read_csv(fileName)
+    bestSellerSkintypes_data = read_file(fileName)
     cur, conn = connection()
     
     for idx in range(len(bestSellerSkintypes_data)):
@@ -121,7 +138,7 @@ def create_bestSellerSkintypes(fileName):
 
 def create_concerns(fileName):
     
-    concerns_data = pd.read_csv(fileName)
+    concerns_data = read_file(fileName)
     cur, conn = connection()
     
     for idx in range(len(concerns_data)):
@@ -138,7 +155,7 @@ def create_concerns(fileName):
     
 def create_skinTypes(fileName):
     
-    skinTypes_data = pd.read_csv(fileName)
+    skinTypes_data = read_file(fileName)
     cur, conn = connection()
     
     for idx in range(len(skinTypes_data)):
