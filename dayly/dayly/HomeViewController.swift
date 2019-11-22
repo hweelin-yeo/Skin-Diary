@@ -17,9 +17,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradient()
-        
+
         tableView.sectionHeaderHeight = 45
         tableView.tableFooterView = UIView()
+        tableView.backgroundColor = .white
         
         setupGreetings(name: "Kaitlyn")
         setupTableView()
@@ -217,7 +218,7 @@ extension HomeViewController {
             
             if (index == 0) {
                 label.snp.makeConstraints { (make) in
-                    make.left.equalToSuperview().offset(100)
+                    make.left.equalToSuperview().offset(70)
                     make.centerY.equalToSuperview()
                     make.height.equalTo(labelHeight)
                     make.width.equalTo(labelWidth)
@@ -297,6 +298,7 @@ extension HomeViewController {
         let imageGap = 27.0
         
         let cell = UITableViewCell()
+        cell.backgroundColor = .white
         
         let dateLabel = UILabel()
         dateLabel.textAlignment = .center
@@ -323,7 +325,7 @@ extension HomeViewController {
             
             if (index == 0) {
                 imageView.snp.makeConstraints { (make) in
-                    make.left.equalToSuperview().offset(100)
+                    make.left.equalToSuperview().offset(70)
                     make.centerY.equalToSuperview()
                     make.height.equalTo(imageHeight)
                     make.width.equalTo(imageWidth)

@@ -90,7 +90,7 @@ class ProductsViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(40)
+            make.top.equalToSuperview().offset(60)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.bottom.equalToSuperview()

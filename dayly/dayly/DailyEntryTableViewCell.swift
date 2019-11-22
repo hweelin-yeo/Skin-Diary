@@ -82,7 +82,7 @@ class DailyEntryTableViewCell: UITableViewCell {
     }
     func setupFiveButtons(imageArr: [String], imageDescrArr: [String]) {
 
-        let imageGap = 30.0
+        let imageGap = 25.0
 
         var buttonArray: [UIButton] = []
 
@@ -104,7 +104,7 @@ class DailyEntryTableViewCell: UITableViewCell {
 
             if (i == 0) {
                 button.snp.makeConstraints { (make) in
-                    make.left.equalToSuperview().offset(30)
+                    make.left.equalToSuperview().offset(20)
                     make.width.equalTo(45)
                     make.height.equalTo(45)
                     make.top.equalTo(questionLabel.snp.bottom).offset(30)
@@ -132,7 +132,7 @@ class DailyEntryTableViewCell: UITableViewCell {
     }
     
     func setupSixButtons(imageDescArr: [String]) {
-        let imageGap = 45.0
+        let imageGap = 40.0
         
         var buttonArray: [UIButton] = []
         
@@ -146,7 +146,7 @@ class DailyEntryTableViewCell: UITableViewCell {
             
             if (i == 0) {
                 button.snp.makeConstraints { (make) in
-                    make.left.equalToSuperview().offset(40)
+                    make.left.equalToSuperview().offset(30)
                     make.width.equalTo(80)
                     make.height.equalTo(80)
                     make.top.equalTo(questionLabel.snp.bottom).offset(30)
@@ -173,7 +173,7 @@ class DailyEntryTableViewCell: UITableViewCell {
             
             if (i == 3) {
                 button.snp.makeConstraints { (make) in
-                    make.left.equalToSuperview().offset(40)
+                    make.left.equalToSuperview().offset(30)
                     make.width.equalTo(80)
                     make.height.equalTo(80)
                     make.top.equalTo(buttonArray[i-3].snp.bottom).offset(30)
