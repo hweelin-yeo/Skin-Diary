@@ -62,13 +62,13 @@ class DailyEntryTableViewCell: UITableViewCell {
     func setupButtons() {
         switch questionType {
         case .feel:
-            setupFiveButtons(imageDescArr: ["excited", "happy", "meh",  "sad", "stressed"])
+            setupFiveButtons(imageArr: ["excited", "happy", "meh",  "sad", "stressed"], imageDescrArr: ["Excited", "Happy", "Meh",  "Sad", "Stressed"])
             break
         case .hydration:
-            setupFiveButtons(imageDescArr: ["2Cups", "34Cups","56Cups","78Cups","8Cups"])
+            setupFiveButtons(imageArr: ["2Cups", "34Cups","56Cups","78Cups","8Cups"], imageDescrArr: ["<2 Cups", "3-4 Cups","5-6 Cups","7-8 Cups",">8 Cups"])
             break
         case .sleep:
-            setupFiveButtons(imageDescArr: ["2Hours","34Hours","56Hours","78Hours","8Hours"])
+            setupFiveButtons(imageArr: ["2Hours","34Hours","56Hours","78Hours","8Hours"], imageDescrArr: ["<2 Hours", "3-4 Hours","5-6 Hours","7-8 Hours",">8 Hours"])
             break
         case .eat:
             setupSixButtons(imageDescArr: ["dairy", "fish2", "meat",  "refinedCarbs", "sugar", "vegetablesFruit"])
@@ -80,42 +80,59 @@ class DailyEntryTableViewCell: UITableViewCell {
         
 
     }
-    func setupFiveButtons(imageDescArr: [String]) {
+    func setupFiveButtons(imageArr: [String], imageDescrArr: [String]) {
 
-        let imageGap = 25.0
+        let imageGap = 30.0
 
         var buttonArray: [UIButton] = []
 
-        // top layer of buttons
         for i in 0...4 {
             let button = UIButton()
-            button.setImage(UIImage(named: imageDescArr[i]), for: .normal)
+            button.setImage(UIImage(named: imageArr[i]), for: .normal)
+            button.contentHorizontalAlignment = .fill
+            button.contentVerticalAlignment = .fill
+            
+            let buttonLabel = UILabel()
+            buttonLabel.text = imageDescrArr[i]
+            buttonLabel.font = SDFont(type: .medium, size: .mediumSmall).instance
+            buttonLabel.textAlignment = .center
+            buttonLabel.textColor = .gray
+            
             buttonArray.append(button)
-            button.tintColor = UIColor.blue
-
             addSubview(button)
+            addSubview(buttonLabel)
 
             if (i == 0) {
                 button.snp.makeConstraints { (make) in
                     make.left.equalToSuperview().offset(30)
-                    make.width.equalTo(50)
-                    make.height.equalTo(50)
+                    make.width.equalTo(45)
+                    make.height.equalTo(45)
                     make.top.equalTo(questionLabel.snp.bottom).offset(30)
                 }
             } else {
                 button.snp.makeConstraints { (make) in
                     make.left.equalTo(buttonArray[i-1].snp.right).offset(imageGap)
-                    make.width.equalTo(50)
-                    make.height.equalTo(50)
+                    make.width.equalTo(45)
+                    make.height.equalTo(45)
                     make.top.equalTo(questionLabel.snp.bottom).offset(30)
                 }
             }
+            
+            buttonLabel.snp.makeConstraints { (make) in
+                make.top.equalTo(buttonArray[i].snp.bottom).offset(2)
+                make.width.equalTo(buttonArray[i])
+                make.height.equalTo(buttonArray[i])
+                make.centerX.equalTo(buttonArray[i])
+            }
+            
         }
+        
+
         
     }
     
     func setupSixButtons(imageDescArr: [String]) {
-        let imageGap = 75.0
+        let imageGap = 45.0
         
         var buttonArray: [UIButton] = []
         
@@ -124,22 +141,21 @@ class DailyEntryTableViewCell: UITableViewCell {
             let button = UIButton()
             button.setImage(UIImage(named: imageDescArr[i]), for: .normal)
             buttonArray.append(button)
-            button.tintColor = UIColor.blue
             
             addSubview(button)
             
             if (i == 0) {
                 button.snp.makeConstraints { (make) in
                     make.left.equalToSuperview().offset(40)
-                    make.width.equalTo(50)
-                    make.height.equalTo(50)
+                    make.width.equalTo(80)
+                    make.height.equalTo(80)
                     make.top.equalTo(questionLabel.snp.bottom).offset(30)
                 }
             } else {
                 button.snp.makeConstraints { (make) in
                     make.left.equalTo(buttonArray[i-1].snp.right).offset(imageGap)
-                    make.width.equalTo(50)
-                    make.height.equalTo(50)
+                    make.width.equalTo(80)
+                    make.height.equalTo(80)
                     make.top.equalTo(questionLabel.snp.bottom).offset(30)
                 }
             }
@@ -150,23 +166,23 @@ class DailyEntryTableViewCell: UITableViewCell {
         for i in 3...5 {
             let button = UIButton()
             button.setImage(UIImage(named: imageDescArr[i]), for: .normal)
+            button.contentMode = .scaleToFill
             buttonArray.append(button)
-            button.tintColor = UIColor.blue
             
             addSubview(button)
             
             if (i == 3) {
                 button.snp.makeConstraints { (make) in
                     make.left.equalToSuperview().offset(40)
-                    make.width.equalTo(50)
-                    make.height.equalTo(50)
+                    make.width.equalTo(80)
+                    make.height.equalTo(80)
                     make.top.equalTo(buttonArray[i-3].snp.bottom).offset(30)
                 }
             } else {
                 button.snp.makeConstraints { (make) in
                     make.left.equalTo(buttonArray[i-1].snp.right).offset(imageGap)
-                    make.width.equalTo(50)
-                    make.height.equalTo(50)
+                    make.width.equalTo(80)
+                    make.height.equalTo(80)
                     make.top.equalTo(buttonArray[i-3].snp.bottom).offset(30)
                 }
             }

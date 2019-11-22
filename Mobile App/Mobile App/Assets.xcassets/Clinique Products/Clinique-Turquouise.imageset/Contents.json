@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "clSkuZh06011200X15000.png",
+      "filename" : "acne.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "clSkuZh06011200X15000@2x.png",
+      "filename" : "acne@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "clSkuZh06011200X15000@3x.png",
+      "filename" : "acne@3x.png",
       "scale" : "3x"
     }
   ],

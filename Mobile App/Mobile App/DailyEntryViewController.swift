@@ -13,6 +13,9 @@ class DailyEntryViewController: UIViewController {
     var tableView = UITableView()
     var bottomView = UIView()
     
+    let cameraView = UIImageView()
+    var selfiePresent = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradient()
@@ -74,7 +77,6 @@ class DailyEntryViewController: UIViewController {
     
     
     func setupCameraView() {
-        let cameraView = UIImageView()
         cameraView.image = UIImage(named: "camera")
         view.addSubview(cameraView)
         
@@ -89,6 +91,22 @@ class DailyEntryViewController: UIViewController {
         cameraView.layer.cornerRadius = 164/2
         
         cameraView.backgroundColor = .white
+        setupTapRecognizer()
+    }
+    
+    func setupTapRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        view.addGestureRecognizer(tap)
+        view.isUserInteractionEnabled = true
+    }
+    
+    // function which is triggered when handleTap is called
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        let vc = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.allowsEditing = true
+        vc.delegate = self
+        present(vc, animated: true)
     }
     
     func setupTableView() {
@@ -124,12 +142,38 @@ extension DailyEntryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if (indexPath.row <= 2) {
-            return 170
+        if (indexPath.row == 0) {
+            return 150
         }
         
-        return 240
+        if (indexPath.row <= 2) {
+            return 200
+        }
+        
+        return 280
+    }
+}
+
+extension DailyEntryViewController: UINavigationControllerDelegate {
+    
+}
+
+extension DailyEntryViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        
+        guard let image = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+        
+        // print out the image size as a test
+        displaySelfie(image: image)
+    }
+    
+    func displaySelfie(image: UIImage) {
+        cameraView.image = image
     }
     
     
