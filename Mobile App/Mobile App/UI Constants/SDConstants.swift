@@ -23,6 +23,7 @@ struct SDFont {
     
     enum SDFontSize: Float {
         case large = 30.0
+        case mediumLarger = 18.0
         case mediumLarge = 16.0
         case medium = 12.0
         case mediumSmall = 10.0

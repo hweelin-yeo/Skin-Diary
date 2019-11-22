@@ -23,6 +23,7 @@ class DailyEntryViewController: UIViewController {
         setupTableView()
         
         tableView.tableFooterView = UIView()
+        tableView.register(DailyEntryTableViewCell.self, forCellReuseIdentifier: "dailyEntryCellID")
         
     }
     
@@ -111,17 +112,17 @@ extension DailyEntryViewController: UITableViewDelegate {
 }
 
 extension DailyEntryViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if (indexPath.row == 0) {
-            return UITableViewCell()
-        }
+        if (indexPath.row == 0) { return UITableViewCell() }
         
-        return UITableViewCell()
+        return DailyEntryTableViewCell(style: .default, reuseIdentifier: "dailyEntryCellID", index: indexPath.row)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
