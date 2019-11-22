@@ -38,7 +38,7 @@ class DailyEntryViewController: UIViewController {
     func setupHeaderName() {
         let headerNameLabel = UILabel()
         headerNameLabel.textAlignment = .center
-        headerNameLabel.font = SDFont(type: .mediumBlack, size: .mediumLarge).instance
+        headerNameLabel.font = SDFont(type: .mediumBlack, size: .largeSmall).instance
         headerNameLabel.textColor = .white
         headerNameLabel.text = "DAILY ENTRY"
 
@@ -46,7 +46,7 @@ class DailyEntryViewController: UIViewController {
 
         headerNameLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(70)
+            make.top.equalToSuperview().offset(80)
             make.height.equalTo(16)
             make.width.equalTo(232)
         }
