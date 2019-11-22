@@ -98,7 +98,7 @@ class DailyEntryViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(120)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.bottom.equalToSuperview()
@@ -114,23 +114,22 @@ extension DailyEntryViewController: UITableViewDelegate {
 extension DailyEntryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if (indexPath.row == 0) { return UITableViewCell() }
         
         return DailyEntryTableViewCell(style: .default, reuseIdentifier: "dailyEntryCellID", index: indexPath.row)
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (indexPath.row == 0) {
-            return 120
+        
+        if (indexPath.row <= 2) {
+            return 170
         }
         
-        return 170
+        return 240
     }
     
     

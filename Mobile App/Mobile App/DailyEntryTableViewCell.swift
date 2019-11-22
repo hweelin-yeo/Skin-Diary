@@ -10,11 +10,11 @@ import UIKit
 
 enum CellType: Int {
     
-    case feel = 1
-    case hydration = 2
-    case sleep = 3
-    case eat = 4
-    case products = 5
+    case feel = 0
+    case hydration = 1
+    case sleep = 2
+    case eat = 3
+    case products = 4
     
     var description: String {
         switch self {
@@ -71,10 +71,10 @@ class DailyEntryTableViewCell: UITableViewCell {
             setupFiveButtons(imageDesArr: ["2Hours","34Hours","56Hours","78Hours","8Hours"])
             break
         case .eat:
-            setupFiveButtons(imageDesArr: ["excited", "happy", "meh",  "sad", "stressed"])
+            setupSixButtons(imageDesArr: ["dairy", "fish2", "meat",  "refinedCarbs", "sugar", "vegetablesFruit"])
             break
         case .products:
-            setupFiveButtons(imageDesArr: ["excited", "happy", "meh",  "sad", "stressed"])
+            setupSixButtons(imageDesArr: ["Clinique-Green", "Clinique-Offwhite", "Clinique-Pink",  "Clinique-Turquouise", "Clinique-White", "Clinique-Yellow"])
             break
         }
         
@@ -86,6 +86,7 @@ class DailyEntryTableViewCell: UITableViewCell {
 
         var buttonArray: [UIButton] = []
 
+        // top layer of buttons
         for i in 0...4 {
             let button = UIButton()
             button.setImage(UIImage(named: imageDesArr[i]), for: .normal)
@@ -98,21 +99,75 @@ class DailyEntryTableViewCell: UITableViewCell {
                     make.left.equalToSuperview().offset(30)
                     make.width.equalTo(50)
                     make.height.equalTo(50)
-                    make.top.equalTo(questionLabel.snp.bottom).offset(20)
+                    make.top.equalTo(questionLabel.snp.bottom).offset(30)
                 }
             } else {
                 button.snp.makeConstraints { (make) in
                     make.left.equalTo(buttonArray[i-1].snp.right).offset(imageGap)
                     make.width.equalTo(50)
                     make.height.equalTo(50)
-                    make.top.equalTo(questionLabel.snp.bottom).offset(20)
+                    make.top.equalTo(questionLabel.snp.bottom).offset(30)
                 }
             }
         }
+        
     }
     
-    func setupSixButtons() {
+    func setupSixButtons(imageDesArr: [String]) {
+        let imageGap = 75.0
         
+        var buttonArray: [UIButton] = []
+        
+        // top layer of buttons
+        for i in 0...2 {
+            let button = UIButton()
+            button.setImage(UIImage(named: imageDesArr[i]), for: .normal)
+            buttonArray.append(button)
+            
+            addSubview(button)
+            
+            if (i == 0) {
+                button.snp.makeConstraints { (make) in
+                    make.left.equalToSuperview().offset(40)
+                    make.width.equalTo(50)
+                    make.height.equalTo(50)
+                    make.top.equalTo(questionLabel.snp.bottom).offset(30)
+                }
+            } else {
+                button.snp.makeConstraints { (make) in
+                    make.left.equalTo(buttonArray[i-1].snp.right).offset(imageGap)
+                    make.width.equalTo(50)
+                    make.height.equalTo(50)
+                    make.top.equalTo(questionLabel.snp.bottom).offset(30)
+                }
+            }
+        }
+        
+        
+        // bottom layer of buttons
+        for i in 3...5 {
+            let button = UIButton()
+            button.setImage(UIImage(named: imageDesArr[i]), for: .normal)
+            buttonArray.append(button)
+            
+            addSubview(button)
+            
+            if (i == 3) {
+                button.snp.makeConstraints { (make) in
+                    make.left.equalToSuperview().offset(40)
+                    make.width.equalTo(50)
+                    make.height.equalTo(50)
+                    make.top.equalTo(buttonArray[i-3].snp.bottom).offset(30)
+                }
+            } else {
+                button.snp.makeConstraints { (make) in
+                    make.left.equalTo(buttonArray[i-1].snp.right).offset(imageGap)
+                    make.width.equalTo(50)
+                    make.height.equalTo(50)
+                    make.top.equalTo(buttonArray[i-3].snp.bottom).offset(30)
+                }
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
