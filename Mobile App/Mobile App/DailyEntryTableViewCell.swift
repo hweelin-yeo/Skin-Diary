@@ -62,25 +62,25 @@ class DailyEntryTableViewCell: UITableViewCell {
     func setupButtons() {
         switch questionType {
         case .feel:
-            setupFiveButtons(imageDesArr: ["excited", "happy", "meh",  "sad", "stressed"])
+            setupFiveButtons(imageDescArr: ["excited", "happy", "meh",  "sad", "stressed"])
             break
         case .hydration:
-            setupFiveButtons(imageDesArr: ["2Cups", "34Cups","56Cups","78Cups","8Cups"])
+            setupFiveButtons(imageDescArr: ["2Cups", "34Cups","56Cups","78Cups","8Cups"])
             break
         case .sleep:
-            setupFiveButtons(imageDesArr: ["2Hours","34Hours","56Hours","78Hours","8Hours"])
+            setupFiveButtons(imageDescArr: ["2Hours","34Hours","56Hours","78Hours","8Hours"])
             break
         case .eat:
-            setupSixButtons(imageDesArr: ["dairy", "fish2", "meat",  "refinedCarbs", "sugar", "vegetablesFruit"])
+            setupSixButtons(imageDescArr: ["dairy", "fish2", "meat",  "refinedCarbs", "sugar", "vegetablesFruit"])
             break
         case .products:
-            setupSixButtons(imageDesArr: ["Clinique-Green", "Clinique-Offwhite", "Clinique-Pink",  "Clinique-Turquouise", "Clinique-White", "Clinique-Yellow"])
+            setupSixButtons(imageDescArr: ["Clinique-Green", "Clinique-Offwhite", "Clinique-Pink",  "Clinique-Turquouise", "Clinique-White", "Clinique-Yellow"])
             break
         }
         
 
     }
-    func setupFiveButtons(imageDesArr: [String]) {
+    func setupFiveButtons(imageDescArr: [String]) {
 
         let imageGap = 25.0
 
@@ -89,8 +89,9 @@ class DailyEntryTableViewCell: UITableViewCell {
         // top layer of buttons
         for i in 0...4 {
             let button = UIButton()
-            button.setImage(UIImage(named: imageDesArr[i]), for: .normal)
+            button.setImage(UIImage(named: imageDescArr[i]), for: .normal)
             buttonArray.append(button)
+            button.tintColor = UIColor.blue
 
             addSubview(button)
 
@@ -113,7 +114,7 @@ class DailyEntryTableViewCell: UITableViewCell {
         
     }
     
-    func setupSixButtons(imageDesArr: [String]) {
+    func setupSixButtons(imageDescArr: [String]) {
         let imageGap = 75.0
         
         var buttonArray: [UIButton] = []
@@ -121,8 +122,9 @@ class DailyEntryTableViewCell: UITableViewCell {
         // top layer of buttons
         for i in 0...2 {
             let button = UIButton()
-            button.setImage(UIImage(named: imageDesArr[i]), for: .normal)
+            button.setImage(UIImage(named: imageDescArr[i]), for: .normal)
             buttonArray.append(button)
+            button.tintColor = UIColor.blue
             
             addSubview(button)
             
@@ -147,8 +149,9 @@ class DailyEntryTableViewCell: UITableViewCell {
         // bottom layer of buttons
         for i in 3...5 {
             let button = UIButton()
-            button.setImage(UIImage(named: imageDesArr[i]), for: .normal)
+            button.setImage(UIImage(named: imageDescArr[i]), for: .normal)
             buttonArray.append(button)
+            button.tintColor = UIColor.blue
             
             addSubview(button)
             
