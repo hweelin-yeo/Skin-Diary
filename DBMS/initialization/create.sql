@@ -29,7 +29,7 @@ CREATE TABLE bestSellers(
     `description` VARCHAR(200),
     `productFunction` VARCHAR(200),
     `keywords` VARCHAR(200),
-    `keyIngredients` VARCHAR(500)
+    `keyIngredients` VARCHAR(2000)
 );
 
 CREATE TABLE bestSellersConcerns(
