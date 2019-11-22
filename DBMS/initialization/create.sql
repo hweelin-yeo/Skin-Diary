@@ -27,9 +27,9 @@ CREATE TABLE bestSellers(
     `productId` INT UNSIGNED PRIMARY KEY,
     `name` VARCHAR(200),
     `description` VARCHAR(200),
-    `function` VARCHAR(200),
+    `productFunction` VARCHAR(200),
     `keywords` VARCHAR(200),
-    `keyIngredients` VARCHAR(200)
+    `keyIngredients` VARCHAR(500)
 );
 
 CREATE TABLE bestSellersConcerns(
@@ -56,4 +56,25 @@ CREATE TABLE skinTypes(
     CONSTRAINT productId_concernId PRIMARY KEY(`skinTypeID`, `skinType`)
 );
 
+CREATE TABLE customerInputs(
+	`dateCustomerId` INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	`customerId` VARCHAR(200),
+    `mood` VARCHAR(200),
+    `cupsOfWater` INT UNSIGNED,
+    `sleepHours` INT UNSIGNED,
+    `vegeFruit` BOOL,
+    `refinedCarbs` BOOL,
+    `sugar` BOOL,
+    `dairy` BOOL,
+	`meat` BOOL,
+    `seafood` BOOL, 
+    `dateOfEntry` DATETIME
+);
+
+CREATE TABLE entryProducts(
+	`dateCustomerId` INT UNSIGNED NOT NULL,
+    `productId` INT UNSIGNED NOT NULL,
+    CONSTRAINT dateCustomerId_productId PRIMARY KEY(`dateCustomerId`, `productId`)
+);    
+	
 
