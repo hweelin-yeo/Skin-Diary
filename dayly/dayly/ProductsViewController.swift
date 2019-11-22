@@ -90,7 +90,7 @@ class ProductsViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(70)
+            make.top.equalToSuperview().offset(40)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.bottom.equalToSuperview()
@@ -117,7 +117,7 @@ class ProductsViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.91)
             make.top.equalTo(headerNameLabel.snp.bottom).offset(48)
-            make.height.equalTo(182)
+            make.height.equalTo(163)
         }
         
         let recommendationView = UIView()
@@ -128,13 +128,13 @@ class ProductsViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.9)
             make.top.equalTo(headerNameLabel.snp.bottom).offset(50)
-            make.height.equalTo(179)
+            make.height.equalTo(160)
         }
         
         shadowView.layer.masksToBounds = true
-        shadowView.layer.cornerRadius = 5
+        shadowView.layer.cornerRadius = 10
         recommendationView.layer.masksToBounds = true
-        recommendationView.layer.cornerRadius = 5
+        recommendationView.layer.cornerRadius = 10
         
         let mayNeedLabel = UILabel()
         mayNeedLabel.font = SDFont(type: .medium, size: .mediumLarger).instance
@@ -155,7 +155,7 @@ class ProductsViewController: UIViewController {
         
         imageView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(50)
-            make.top.equalTo(mayNeedLabel.snp.bottom).offset(25)
+            make.top.equalTo(mayNeedLabel.snp.bottom).offset(20)
             make.height.equalTo(70)
             make.width.equalToSuperview().multipliedBy(0.7)
         }
