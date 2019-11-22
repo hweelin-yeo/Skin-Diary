@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA5DC9AC2374BEDD0075C14A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC9AB2374BEDD0075C14A /* NetworkManager.swift */; };
+		BA6C1AD223874FD900478B6E /* DailyEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C1AD123874FD900478B6E /* DailyEntryTableViewCell.swift */; };
 		BA7D124123793C74009AB2CA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D124023793C74009AB2CA /* UIColor+Extension.swift */; };
 		BAA51D3A23822D1400BC582B /* DailyEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA51D3923822D1400BC582B /* DailyEntryViewController.swift */; };
 		BAC9CE4D237E866400218083 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC9CE4C237E866400218083 /* TabBarController.swift */; };
@@ -27,6 +28,7 @@
 		39000860B28D99E6F8A4377F /* Pods-Mobile App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mobile App/Pods-Mobile App.debug.xcconfig"; sourceTree = "<group>"; };
 		5F4E67EC140C8BEFB649E05A /* Pods_Mobile_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5DC9AB2374BEDD0075C14A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BA6C1AD123874FD900478B6E /* DailyEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyEntryTableViewCell.swift; sourceTree = "<group>"; };
 		BA7D124023793C74009AB2CA /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BAA51D3923822D1400BC582B /* DailyEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyEntryViewController.swift; sourceTree = "<group>"; };
 		BAC9CE4C237E866400218083 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				BAD9A1672363892300A225E1 /* HomeViewController.swift */,
 				BAC9CE4C237E866400218083 /* TabBarController.swift */,
 				BAA51D3923822D1400BC582B /* DailyEntryViewController.swift */,
+				BA6C1AD123874FD900478B6E /* DailyEntryTableViewCell.swift */,
 				BA452D99237B41AD00FAA405 /* UI Constants */,
 				BA7D124223793C8A009AB2CA /* Extension */,
 				BAD9A16C2363892500A225E1 /* Assets.xcassets */,
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6C1AD223874FD900478B6E /* DailyEntryTableViewCell.swift in Sources */,
 				BAD9A1792363897A00A225E1 /* HTTP.swift in Sources */,
 				BAD9A1682363892300A225E1 /* HomeViewController.swift in Sources */,
 				BAF1FD54237B438100D708DE /* SDConstants.swift in Sources */,

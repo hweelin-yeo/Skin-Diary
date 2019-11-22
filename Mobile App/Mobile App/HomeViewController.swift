@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        setupGradient()
         
         tableView.sectionHeaderHeight = 45
         tableView.tableFooterView = UIView()
@@ -25,6 +25,10 @@ class HomeViewController: UIViewController {
         setupTableView()
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     // MARK: - Table View
@@ -41,10 +45,24 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: UI
+    
+    func setupGradient() {
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.locations = [0.0, 0.3]
+        gradientLayer.colors = [SDColor.orangeTop.cgColor, SDColor.orangeBottom.cgColor]
+        
+        self.view.layer.addSublayer(gradientLayer)
+        
+    }
+    
     func setupGreetings(name: String) {
         
         view.addSubview(greetingView)
-        greetingView.backgroundColor = SDColor.turquoise
+//        greetingView.backgroundColor = SDColor.turquoise
+        
+        
         
         greetingView.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
@@ -93,6 +111,9 @@ class HomeViewController: UIViewController {
     func setupWeatherStack() {
 
         let weatherStackView = UIView() // UIStackView()
+        
+        let weatherImageView = UIImageView()
+        weatherImageView.image = UIImage(named: "sunWhite")
 
         let weatherDescr = UILabel()
         weatherDescr.text = "Sunny, 33F"
@@ -122,10 +143,18 @@ class HomeViewController: UIViewController {
         }
 
         greetingView.addSubview(weatherStackView)
+        greetingView.addSubview(weatherImageView)
+        
+        weatherImageView.snp.makeConstraints { (make) in
+            make.width.equalTo(37)
+            make.height.equalTo(37)
+            make.left.equalTo(greetingView).offset(30)
+            make.bottom.equalTo(greetingView).offset(-35)
+        }
 
         weatherStackView.snp.makeConstraints { (make) in
             make.width.equalTo(greetingView)
-            make.left.equalTo(greetingView).offset(100)
+            make.left.equalTo(weatherImageView.snp.right).offset(15)
             make.height.equalTo(greetingView).multipliedBy(0.25)
             make.bottom.equalTo(greetingView).offset(-10)
         }
@@ -174,21 +203,21 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController {
     
     func generateHeaderView() -> UIView {
-        let labels = generateLabelsArray(["Selfies", "Weather", "Feeling", "Sleep", "Water", "Products Used"])
+        let labels = generateLabelsArray(["Weather", "Feeling", "Sleep", "Water", "Products Used"])
         
         let headerView = UIView()
         headerView.backgroundColor = SDColor.lightGray
         
         let labelWidth = 47.0
         let labelHeight = 28.0
-        let labelGap = 10.0
+        let labelGap = 15.0
         
         for (index, label) in labels.enumerated() {
             headerView.addSubview(label)
             
             if (index == 0) {
                 label.snp.makeConstraints { (make) in
-                    make.left.equalToSuperview().offset(70)
+                    make.left.equalToSuperview().offset(100)
                     make.centerY.equalToSuperview()
                     make.height.equalTo(labelHeight)
                     make.width.equalTo(labelWidth)
@@ -265,11 +294,12 @@ extension HomeViewController {
         
         let imageWidth = 35.0
         let imageHeight = 35.0
-        let imageGap = 20.0
+        let imageGap = 27.0
         
         let cell = UITableViewCell()
         
         let dateLabel = UILabel()
+        dateLabel.textAlignment = .center
         dateLabel.text = date
         dateLabel.font = UIFont(name: "Avenir-Heavy", size: 12.0)
         dateLabel.textColor = .darkGray
@@ -293,7 +323,7 @@ extension HomeViewController {
             
             if (index == 0) {
                 imageView.snp.makeConstraints { (make) in
-                    make.left.equalToSuperview().offset(130)
+                    make.left.equalToSuperview().offset(100)
                     make.centerY.equalToSuperview()
                     make.height.equalTo(imageHeight)
                     make.width.equalTo(imageWidth)
