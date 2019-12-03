@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EntryDelegate: class {
+    func refresh()
+}
+
 class DailyEntryViewController: UIViewController {
     
     var tableView = UITableView()
@@ -15,9 +19,11 @@ class DailyEntryViewController: UIViewController {
     
     let cameraView = UIImageView()
     var selfiePresent = false
+    weak var entryDelegate: EntryDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupGradient()
         setupHeaderName()
         
@@ -73,7 +79,6 @@ class DailyEntryViewController: UIViewController {
         gradientLayer.colors = [SDColor.pinkTop.cgColor, SDColor.pinkOrangeBottom.cgColor]
         
         self.view.layer.addSublayer(gradientLayer)
-        
     }
     
     
@@ -133,12 +138,14 @@ extension DailyEntryViewController: UITableViewDelegate {
 extension DailyEntryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = DailyEntryTableViewCell(style: .default, reuseIdentifier: "dailyEntryCellID", index: indexPath.row)
+        cell.submitButtonDelegate = self
         
-        return DailyEntryTableViewCell(style: .default, reuseIdentifier: "dailyEntryCellID", index: indexPath.row)
+        return cell
         
     }
     
@@ -151,9 +158,42 @@ extension DailyEntryViewController: UITableViewDataSource {
             return 200
         }
         
+        if (indexPath.row == 5){
+            return 50
+        }
+        
         return 280
     }
 }
+
+//class DailyEntryFooterView: UIView {
+//    
+//    override init(frame: CGRect){
+//        super.init(frame: frame)
+//        addButton()
+//        
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        addButton()
+//    }
+//    
+//    
+//    func addButton() {
+//        let button = UIButton()
+//        button.setTitle("Submit", for: .normal)
+//        content.addSubview(button)
+//        
+//        
+//        button.snp.makeConstraints { (make) in
+//            make.left.equalToSuperview()
+//            make.right.equalToSuperview()
+//            make.height.equalToSuperview()
+//        }
+//    }
+//    
+//}
 
 extension DailyEntryViewController: UINavigationControllerDelegate {
     
@@ -178,4 +218,27 @@ extension DailyEntryViewController: UIImagePickerControllerDelegate {
     }
     
     
+}
+
+extension DailyEntryViewController: SubmitButtonDelegate {
+    
+    func submitEntry() {
+        let alert = UIAlertController(title: nil, message: "Updating...", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            loadingIndicator.stopAnimating()
+            self.dismiss(animated: false, completion: nil)
+            self.entryDelegate?.refresh()
+        }
+        
+    }
+   
 }

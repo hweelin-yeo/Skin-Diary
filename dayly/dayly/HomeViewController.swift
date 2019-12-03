@@ -13,11 +13,14 @@ class HomeViewController: UIViewController {
     
     var greetingView = UIView()
     var tableView = UITableView()
+    var cells: [UITableViewCell]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradient()
 
+        cells = generateTableViewCells()
+        
         tableView.sectionHeaderHeight = 45
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = .white
@@ -187,12 +190,12 @@ extension HomeViewController: UITableViewDataSource {
         return generateHeaderView()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return cells?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return generateTableViewCells()[indexPath.row]
+        return ((cells?[indexPath.row])!)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -287,6 +290,15 @@ extension HomeViewController {
         
     }
     
+    func generateGenericCell() -> UITableViewCell {
+        return generateCell("Nov \n11", [UIImage(named: "sunPink")!,
+                                         UIImage(named: "excited")!,
+                                         UIImage(named: "56Hours")!,
+                                         UIImage(named: "78Cups")!,
+                                         UIImage(named: "70ProductUsed")!])
+
+    }
+    
     func generateCell(_ date: String, _ pics: [UIImage]) -> UITableViewCell {
         
         let dateLabelWidth = 37.0
@@ -349,4 +361,11 @@ extension HomeViewController {
         
     }
     
+}
+
+extension HomeViewController: EntryDelegate {
+    func refresh() {
+        cells?.append(generateGenericCell())
+        tableView.reloadData()
+    }
 }

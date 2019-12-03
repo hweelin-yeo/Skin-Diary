@@ -216,6 +216,7 @@ extension ProductsViewController: UITableViewDataSource {
         
         return 120
     }
+    
 }
 
 

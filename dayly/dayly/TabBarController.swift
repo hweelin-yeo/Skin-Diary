@@ -20,6 +20,7 @@ class TabBarController: UITabBarController {
         view.backgroundColor = .white
         loadTabBarItems()
         viewControllers = [homeVC, statsVC, dailyEntryVC, productVC, profileVC]
+        dailyEntryVC.entryDelegate = homeVC
     }
     
     func loadTabBarItems() {
