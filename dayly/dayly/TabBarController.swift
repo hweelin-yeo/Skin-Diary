@@ -11,7 +11,7 @@ import UIKit
 class TabBarController: UITabBarController {
     
     public let homeVC = HomeViewController()
-    public let statsVC = UIViewController()
+    public let statsVC = StatsViewController()
     public let productVC = ProductsViewController()
     public let profileVC = UIViewController()
     public let dailyEntryVC = DailyEntryViewController()

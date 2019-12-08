@@ -291,11 +291,11 @@ extension HomeViewController {
     }
     
     func generateGenericCell() -> UITableViewCell {
-        return generateCell("Nov \n11", [UIImage(named: "sunPink")!,
+        return generateCell("Dec \n3", [UIImage(named: "cloud")!,
                                          UIImage(named: "excited")!,
-                                         UIImage(named: "56Hours")!,
-                                         UIImage(named: "78Cups")!,
-                                         UIImage(named: "70ProductUsed")!])
+                                         UIImage(named: "34Hours")!,
+                                         UIImage(named: "34Cups")!,
+                                         UIImage(named: "allProductUsed")!])
 
     }
     
@@ -365,7 +365,7 @@ extension HomeViewController {
 
 extension HomeViewController: EntryDelegate {
     func refresh() {
-        cells?.append(generateGenericCell())
+        cells?.insert(generateGenericCell(), at: 0)
         tableView.reloadData()
     }
 }

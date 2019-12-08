@@ -15,6 +15,7 @@
 		BA7D124123793C74009AB2CA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D124023793C74009AB2CA /* UIColor+Extension.swift */; };
 		BA86706A2396BC1300A9ED89 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8670692396BC1300A9ED89 /* LaunchScreenController.swift */; };
 		BA86706E2396C06100A9ED89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA86706D2396C06100A9ED89 /* LaunchScreen.storyboard */; };
+		BA8670722396F76E00A9ED89 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8670712396F76E00A9ED89 /* StatsViewController.swift */; };
 		BAA51D3A23822D1400BC582B /* DailyEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA51D3923822D1400BC582B /* DailyEntryViewController.swift */; };
 		BAC9CE4D237E866400218083 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC9CE4C237E866400218083 /* TabBarController.swift */; };
 		BAD9A1662363892300A225E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9A1652363892300A225E1 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		BA7D124023793C74009AB2CA /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BA8670692396BC1300A9ED89 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		BA86706D2396C06100A9ED89 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA8670712396F76E00A9ED89 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatsViewController.swift; path = "/Users/yeohweelin/Desktop/Skin-Diary/dayly/dayly/StatsViewController.swift"; sourceTree = "<absolute>"; };
 		BAA51D3923822D1400BC582B /* DailyEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyEntryViewController.swift; sourceTree = "<group>"; };
 		BAC9CE4C237E866400218083 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BAD9A1622363892300A225E1 /* dayly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dayly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 				BAD9A1772363894500A225E1 /* Networking */,
 				BAD9A1652363892300A225E1 /* AppDelegate.swift */,
 				BAD9A1672363892300A225E1 /* HomeViewController.swift */,
+				BA8670712396F76E00A9ED89 /* StatsViewController.swift */,
 				BAC9CE4C237E866400218083 /* TabBarController.swift */,
 				BAA51D3923822D1400BC582B /* DailyEntryViewController.swift */,
 				BA6C1AD32387C54D00478B6E /* ProductsViewController.swift */,
@@ -275,6 +278,7 @@
 			files = (
 				BA6C1AD223874FD900478B6E /* DailyEntryTableViewCell.swift in Sources */,
 				BAD9A1792363897A00A225E1 /* HTTP.swift in Sources */,
+				BA8670722396F76E00A9ED89 /* StatsViewController.swift in Sources */,
 				BAD9A1682363892300A225E1 /* HomeViewController.swift in Sources */,
 				BA6C1AD42387C54D00478B6E /* ProductsViewController.swift in Sources */,
 				BAF1FD54237B438100D708DE /* SDConstants.swift in Sources */,
