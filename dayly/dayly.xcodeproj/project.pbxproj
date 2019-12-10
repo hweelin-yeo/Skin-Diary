@@ -17,6 +17,10 @@
 		BA86706E2396C06100A9ED89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA86706D2396C06100A9ED89 /* LaunchScreen.storyboard */; };
 		BA8670722396F76E00A9ED89 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8670712396F76E00A9ED89 /* StatsViewController.swift */; };
 		BAA51D3A23822D1400BC582B /* DailyEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA51D3923822D1400BC582B /* DailyEntryViewController.swift */; };
+		BAAFFF50239F561C004DD3C8 /* DietStatsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFFF4F239F561C004DD3C8 /* DietStatsViewCell.swift */; };
+		BAAFFF55239F5AC4004DD3C8 /* GraphStatsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFFF54239F5AC4004DD3C8 /* GraphStatsViewCell.swift */; };
+		BAAFFF57239F69A5004DD3C8 /* ListStatsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFFF56239F69A5004DD3C8 /* ListStatsViewCell.swift */; };
+		BAAFFF59239F6EF1004DD3C8 /* SkinStatsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFFF58239F6EF1004DD3C8 /* SkinStatsViewCell.swift */; };
 		BAC9CE4D237E866400218083 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC9CE4C237E866400218083 /* TabBarController.swift */; };
 		BAD9A1662363892300A225E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9A1652363892300A225E1 /* AppDelegate.swift */; };
 		BAD9A1682363892300A225E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD9A1672363892300A225E1 /* HomeViewController.swift */; };
@@ -42,6 +46,10 @@
 		BA86706D2396C06100A9ED89 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA8670712396F76E00A9ED89 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatsViewController.swift; path = "/Users/yeohweelin/Desktop/Skin-Diary/dayly/dayly/StatsViewController.swift"; sourceTree = "<absolute>"; };
 		BAA51D3923822D1400BC582B /* DailyEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyEntryViewController.swift; sourceTree = "<group>"; };
+		BAAFFF4F239F561C004DD3C8 /* DietStatsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietStatsViewCell.swift; sourceTree = "<group>"; };
+		BAAFFF54239F5AC4004DD3C8 /* GraphStatsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphStatsViewCell.swift; sourceTree = "<group>"; };
+		BAAFFF56239F69A5004DD3C8 /* ListStatsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStatsViewCell.swift; sourceTree = "<group>"; };
+		BAAFFF58239F6EF1004DD3C8 /* SkinStatsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinStatsViewCell.swift; sourceTree = "<group>"; };
 		BAC9CE4C237E866400218083 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BAD9A1622363892300A225E1 /* dayly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dayly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD9A1652363892300A225E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +105,34 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		BAAFFF51239F59D3004DD3C8 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				BA8670712396F76E00A9ED89 /* StatsViewController.swift */,
+				BAAFFF58239F6EF1004DD3C8 /* SkinStatsViewCell.swift */,
+				BAAFFF54239F5AC4004DD3C8 /* GraphStatsViewCell.swift */,
+				BAAFFF56239F69A5004DD3C8 /* ListStatsViewCell.swift */,
+				BAAFFF4F239F561C004DD3C8 /* DietStatsViewCell.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		BAAFFF52239F59F2004DD3C8 /* Daily Entry */ = {
+			isa = PBXGroup;
+			children = (
+				BAA51D3923822D1400BC582B /* DailyEntryViewController.swift */,
+				BA6C1AD123874FD900478B6E /* DailyEntryTableViewCell.swift */,
+			);
+			path = "Daily Entry";
+			sourceTree = "<group>";
+		};
+		BAAFFF53239F5A0D004DD3C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
 		BAD9A1592363892300A225E1 = {
 			isa = PBXGroup;
 			children = (
@@ -120,12 +156,12 @@
 			children = (
 				BAD9A1772363894500A225E1 /* Networking */,
 				BAD9A1652363892300A225E1 /* AppDelegate.swift */,
-				BAD9A1672363892300A225E1 /* HomeViewController.swift */,
-				BA8670712396F76E00A9ED89 /* StatsViewController.swift */,
 				BAC9CE4C237E866400218083 /* TabBarController.swift */,
-				BAA51D3923822D1400BC582B /* DailyEntryViewController.swift */,
+				BAD9A1672363892300A225E1 /* HomeViewController.swift */,
+				BAAFFF51239F59D3004DD3C8 /* Stats */,
+				BAAFFF52239F59F2004DD3C8 /* Daily Entry */,
 				BA6C1AD32387C54D00478B6E /* ProductsViewController.swift */,
-				BA6C1AD123874FD900478B6E /* DailyEntryTableViewCell.swift */,
+				BAAFFF53239F5A0D004DD3C8 /* Products */,
 				BA452D99237B41AD00FAA405 /* UI Constants */,
 				BA7D124223793C8A009AB2CA /* Extension */,
 				BAD9A16C2363892500A225E1 /* Assets.xcassets */,
@@ -283,6 +319,7 @@
 				BA6C1AD42387C54D00478B6E /* ProductsViewController.swift in Sources */,
 				BAF1FD54237B438100D708DE /* SDConstants.swift in Sources */,
 				BAD9A17D23638AEC00A225E1 /* Router.swift in Sources */,
+				BAAFFF50239F561C004DD3C8 /* DietStatsViewCell.swift in Sources */,
 				BAC9CE4D237E866400218083 /* TabBarController.swift in Sources */,
 				BA5DC9AC2374BEDD0075C14A /* NetworkManager.swift in Sources */,
 				BA6C1AD62387CE5200478B6E /* UIView+Extension.swift in Sources */,
@@ -292,6 +329,9 @@
 				BA86706A2396BC1300A9ED89 /* LaunchScreenController.swift in Sources */,
 				BAD9A17F23638B4100A225E1 /* Service.swift in Sources */,
 				BA7D124123793C74009AB2CA /* UIColor+Extension.swift in Sources */,
+				BAAFFF59239F6EF1004DD3C8 /* SkinStatsViewCell.swift in Sources */,
+				BAAFFF55239F5AC4004DD3C8 /* GraphStatsViewCell.swift in Sources */,
+				BAAFFF57239F69A5004DD3C8 /* ListStatsViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,12 +13,17 @@ class StatsViewController: UIViewController {
     var bottomView = UIView()
     var dietCard = UIView()
     
+    var tableView = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradient()
         setupHeaderName()
         setupBottomView()
-        addDietCard()
+        
+        tableView.tableFooterView = UIView()
+        tableView.register(GraphStatsViewCell.self, forCellReuseIdentifier: "graphStatsViewCell")
+        setupTableView()
     }
     
     func setupGradient() {
@@ -53,51 +58,59 @@ class StatsViewController: UIViewController {
         bottomView.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.8)
+            make.height.equalToSuperview().multipliedBy(0.85)
             make.bottom.equalToSuperview()
         }
     }
     
-    func addDietCard() {
-        dietCard.backgroundColor = .white
-        bottomView.addSubview(dietCard)
+    
+    func setupTableView() {
+        bottomView.addSubview(tableView)
         
-        dietCard.snp.makeConstraints { (make) in
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.top.equalToSuperview().offset(10)
-            make.height.equalTo(80)
+            make.bottom.equalToSuperview()
         }
-        
-        let dietLabel = UILabel()
-        dietLabel.text = "YOUR DIET"
-        dietLabel.font = SDFont(type: .mediumBlack, size: .largeSmall).instance
-        let dietImageView = UIImageView(image: UIImage(named: "dairyProducts"))
-        
-        dietCard.addSubview(dietLabel)
-        dietCard.addSubview(dietImageView)
-        
-        dietImageView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(25)
-            make.width.equalTo(50)
-            make.top.equalToSuperview().offset(20)
-            make.height.equalTo(50)
-        }
-        
-        dietLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(dietImageView.snp.right).offset(30)
-            make.right.equalToSuperview()
-            make.top.equalToSuperview().offset(40)
-            make.height.equalTo(22)
-        }
-        
-        
-        
-//        addSkinConditionButtons(["Acne", "Blackheads", "Dryness & Dehydration", "Fatigue/Radiance"])
     }
     
     func addSkinConditionButtons(_ skinCondArr: [String]) {
         
-    }
         
+    }
+}
+
+extension StatsViewController: UITableViewDelegate {
+    
+}
+
+extension StatsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath.row == 0) { return DietStatsViewCell()}
+        if (indexPath.row == 2) { return GraphStatsViewCell(cellType: .sleep)}
+        if (indexPath.row == 1) { return GraphStatsViewCell(cellType: .feelings)}
+        if (indexPath.row == 3) { return ListStatsViewCell()}
+        if (indexPath.row == 4) { return SkinStatsViewCell()}
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath.row == 0) { return 620}
+        if (indexPath.row == 1 || indexPath.row == 2) { return 400}
+        if (indexPath.row == 3) { return 550}
+        if (indexPath.row == 4) { return 200}
+        
+        return 0
+    }
+    
+    
 }

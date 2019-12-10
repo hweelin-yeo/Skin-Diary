@@ -11,6 +11,7 @@ import UIKit
 struct SDColor {
     static var turquoise = UIColor(hexString: "#60BA88")
     static var lightGray = UIColor(hexString: "#EEEEEE")
+    static var darkGray = UIColor(hexString: "#ABB0B6")
     static var blueTop = UIColor(hexString: "#314577")
     static var blueBottom = UIColor(hexString: "#8A88B0")
     static var orangeTop = UIColor(hexString: "#FFC972")
@@ -60,3 +61,23 @@ extension SDFont {
         return instanceFont
     }
 }
+
+struct SDIconLabel {
+    
+    var text: String
+
+    init(text: String) {
+        self.text = text
+    }
+    
+    var instance: UILabel {
+        
+        let label = UILabel()
+        label.text = text
+        label.textColor = SDColor.darkGray
+        label.font = SDFont(type: .medium, size: .mediumSmall).instance
+        
+        return label
+    }
+}
+

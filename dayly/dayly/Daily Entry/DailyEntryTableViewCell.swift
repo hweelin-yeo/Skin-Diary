@@ -214,30 +214,30 @@ class DailyEntryTableViewCell: UITableViewCell {
             setupSelectedBoolButton(sender, sleepSelection[ind])
             return
         case 3:
-//            if (!eatSelection[ind]) {
-//                let ind = returnIndTrue(eatSelection)
-//                if (ind != -1) {
+            if (!eatSelection[ind]) {
+                let ind = returnIndTrue(eatSelection)
+                if (ind != -1) {
 //                    eatSelection[ind] = false
-//                    setupSelectedBoolButton(eatButtonArray[ind], eatSelection[ind])
-//
-//                }
-//            }
-//
-//            eatSelection[ind] = !eatSelection[ind]
-//            setupSelectedBoolButton(sender, eatSelection[ind])
+                    setupSelectedBoolButton(eatButtonArray[ind], eatSelection[ind])
+                    
+                }
+            }
+            
+            eatSelection[ind] = !eatSelection[ind]
+            setupSelectedBoolButton(sender, eatSelection[ind])
             return
         default:
-//            if (!productsSelection[ind]) {
-//                let ind = returnIndTrue(productsSelection)
-//                if (ind != -1) {
+            if (!productsSelection[ind]) {
+                let ind = returnIndTrue(productsSelection)
+                if (ind != -1) {
 //                    productsSelection[ind] = false
-//                    setupSelectedBoolButton(productsButtonArray[ind], productsSelection[ind])
-//                    
-//                }
-//            }
-//            
-//            productsSelection[ind] = !productsSelection[ind]
-//            setupSelectedBoolButton(sender, productsSelection[ind])
+                    setupSelectedBoolButton(productsButtonArray[ind], productsSelection[ind])
+                    
+                }
+            }
+            
+            productsSelection[ind] = !productsSelection[ind]
+            setupSelectedBoolButton(sender, productsSelection[ind])
             return
         }
         
@@ -346,6 +346,9 @@ class DailyEntryTableViewCell: UITableViewCell {
             button.setImage(UIImage(named: imageDescArr[i]), for: .normal)
             button.setImage(UIImage(named: selecArr[i]), for: .selected)
             button.setImage(UIImage(named: selecArr[i]), for: .highlighted)
+            
+            button.tag = cellType.rawValue * 10 + i
+            button.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
             
             button.contentMode = .scaleToFill
             buttonArr.append(button)
