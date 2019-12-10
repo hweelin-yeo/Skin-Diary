@@ -145,13 +145,13 @@ class DailyEntryTableViewCell: UITableViewCell {
             setupSixButtons(cellType: .eat,
                             buttonArr: &eatButtonArray,
                             imageDescArr: ["dairy", "fish2", "meat",  "refinedCarbs", "sugar", "vegetablesFruit"],
-                            selecArr: ["dairy", "fish2", "meat",  "refinedCarbs", "sugar", "vegetablesFruit"])
+                            selecArr: ["dairyChecked", "seafoodChecked", "meatChecked",  "carbVeg", "sugarChecked", "vegChecked"])
             break
         case .products:
             setupSixButtons(cellType: .products,
                             buttonArr: &productsButtonArray,
                             imageDescArr: ["Clinique-Green", "Clinique-Offwhite", "Clinique-Pink",  "Clinique-Turquouise", "Clinique-White", "Clinique-Yellow"],
-                            selecArr: ["Clinique-Green", "Clinique-Offwhite", "Clinique-Pink",  "Clinique-Turquouise", "Clinique-White", "Clinique-Yellow"])
+                            selecArr: ["moisturizerChecked", "poresSerumChecked", "eyesChecked",  "serumChecked", "extractorChecked", "moisturizingGelChecked"])
             break
         }
         
@@ -214,30 +214,30 @@ class DailyEntryTableViewCell: UITableViewCell {
             setupSelectedBoolButton(sender, sleepSelection[ind])
             return
         case 3:
-            if (!eatSelection[ind]) {
-                let ind = returnIndTrue(eatSelection)
-                if (ind != -1) {
-                    eatSelection[ind] = false
-                    setupSelectedBoolButton(eatButtonArray[ind], eatSelection[ind])
-                    
-                }
-            }
-            
-            eatSelection[ind] = !eatSelection[ind]
-            setupSelectedBoolButton(sender, eatSelection[ind])
+//            if (!eatSelection[ind]) {
+//                let ind = returnIndTrue(eatSelection)
+//                if (ind != -1) {
+//                    eatSelection[ind] = false
+//                    setupSelectedBoolButton(eatButtonArray[ind], eatSelection[ind])
+//
+//                }
+//            }
+//
+//            eatSelection[ind] = !eatSelection[ind]
+//            setupSelectedBoolButton(sender, eatSelection[ind])
             return
         default:
-            if (!productsSelection[ind]) {
-                let ind = returnIndTrue(productsSelection)
-                if (ind != -1) {
-                    productsSelection[ind] = false
-                    setupSelectedBoolButton(productsButtonArray[ind], productsSelection[ind])
-                    
-                }
-            }
-            
-            productsSelection[ind] = !productsSelection[ind]
-            setupSelectedBoolButton(sender, productsSelection[ind])
+//            if (!productsSelection[ind]) {
+//                let ind = returnIndTrue(productsSelection)
+//                if (ind != -1) {
+//                    productsSelection[ind] = false
+//                    setupSelectedBoolButton(productsButtonArray[ind], productsSelection[ind])
+//                    
+//                }
+//            }
+//            
+//            productsSelection[ind] = !productsSelection[ind]
+//            setupSelectedBoolButton(sender, productsSelection[ind])
             return
         }
         
@@ -344,6 +344,9 @@ class DailyEntryTableViewCell: UITableViewCell {
         for i in 3...5 {
             let button = UIButton()
             button.setImage(UIImage(named: imageDescArr[i]), for: .normal)
+            button.setImage(UIImage(named: selecArr[i]), for: .selected)
+            button.setImage(UIImage(named: selecArr[i]), for: .highlighted)
+            
             button.contentMode = .scaleToFill
             buttonArr.append(button)
             
